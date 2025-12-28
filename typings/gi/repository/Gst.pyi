@@ -1,0 +1,19 @@
+from typing import Any
+
+class Pipeline:
+    def set_state(self, state: int) -> int: ...
+    def get_bus(self) -> Any: ...
+    def get_by_name(self, name: str) -> Any: ...
+
+class State:
+    NULL: int
+    READY: int
+    PAUSED: int
+    PLAYING: int
+
+def init(argv: Any = ...) -> None: ...
+def parse_launch(desc: str) -> Pipeline: ...
+
+class Buffer:
+    @staticmethod
+    def new_wrapped(data: bytes) -> 'Buffer': ...
